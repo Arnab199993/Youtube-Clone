@@ -1,0 +1,91 @@
+.Container-Navbar{
+    border: 1px solid ;
+    display: flex;
+    height: calc(3.5rem - 2px);
+    background-color: rgb(33, 33,33);
+}
+.Burger-Logo-Navbar{
+    display: flex;
+    height: 3.3rem;
+}
+.Burger{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border:1px solid transparent;
+    margin-left: 0.5rem;
+    margin-right: 0.7rem;
+    border-radius: 100%;
+}
+.Burger p{
+    margin: 0.5px;
+    width: 1.2rem;
+    height: 0.1rem;
+    background-color:rgb(255,244,244);
+}
+.logo-div-navbar{
+    display: flex;
+    text-decoration: none;
+    
+}
+.logo-title-navbar{
+    margin: auto;
+    color:white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.vid-bell-navbar{
+    color:white;
+    margin-left: 30rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.bell-icon{
+    color:white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;  
+}
+.apps-box{
+    width: 25px;
+    margin:auto 0.7rem;
+    height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+.appbox{
+    border: 1px solid white;
+    margin: 0.1rem;
+    width: 2px;
+    height: 2px;
+}
+.auth-cont-navbar{
+    width: fit-content;
+    /* margin:auto 0.5rem; */
+    position: relative;
+    display: flex;
+    height: 3rem;
+   
+    margin-top: 0.2rem;
+}
+.authBtn{
+    display: flex;
+    cursor: pointer;
+    color: #3ea6ff;
+    background-color: rgb(36,36,36);
+    border:2px solid;
+    padding: 0.2rem;
+    border-radius: 0.1rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin: 0.5rem;
+   
+}

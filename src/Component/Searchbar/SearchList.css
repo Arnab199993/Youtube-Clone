@@ -1,0 +1,22 @@
+.cont-searchlist{
+    background-color: white;
+    width: 90.75%;
+    position: absolute;
+    height: fit-content;
+    z-index: 91;
+    border: 1px solid black;
+    width: 32.3rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    
+}
+.title-item{
+    margin: 0%;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+}
+.title-item:hover{
+    background-color: rgba(166,202,234,0.516);
+    
+}

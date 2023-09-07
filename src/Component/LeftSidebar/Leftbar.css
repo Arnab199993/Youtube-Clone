@@ -1,0 +1,31 @@
+.cont-leftsidebar{
+    background-color: rgb(25, 25, 25);
+    width: 5rem;
+    height: calc(100vh - 3.55rem);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.icon-sidebar-div{
+    cursor: pointer;
+    color: rgb(255,255,255,0.855);
+    text-decoration: none;
+    padding: 0.5rem;
+    /* margin-top: 1rem; */
+}
+.icon-sidebar{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-sidebar-icon{
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.85rem;
+    padding: 0.2rem;
+}
+.icon-sidebar-div:hover,
+.icon-sidebar-div.active{
+    color:aliceblue;
+    background-color: rgb(68,68,68);
+}
