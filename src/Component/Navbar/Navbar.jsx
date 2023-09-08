@@ -6,7 +6,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({toggleBtn}) => {
   // const [currentUser,setCurrentUser]=useState("")
   const currentUser={
     result:{
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div className="Container-Navbar">
       <div className="Burger-Logo-Navbar">
-        <div className="Burger">
+        <div onClick={toggleBtn} className="Burger">
           <p></p>
           <p></p>
           <p></p>

@@ -4,14 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Component/Navbar/Navbar'
 import Home from './Pages/Home/Home'
+import DrawSidebar from './Component/LeftSidebar/DrawSidebar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [toggleDrawerSideBar, settoggleDrawerSideBar] = useState(false)
+  const toggleBtn=()=>{
+    settoggleDrawerSideBar(!toggleDrawerSideBar)
+  }
   return (
     <>
       <div>
-        <Navbar/>
+        <Navbar toggleBtn={toggleBtn}/>
+        <DrawSidebar toggleDrawerSideBar={toggleDrawerSideBar} settoggleDrawerSideBar={settoggleDrawerSideBar} toggleBtn={toggleBtn}/>
         <Home/>
       </div>
     </>

@@ -6,7 +6,8 @@ const Home = () => {
     <>
     <div className='container-pages-app'>
         <LeftSidebar/>
-        <div className="container2-pages-app">
+        <div style={{color:"white"}} className="container2-pages-app">
+          Home
         </div>
     </div>
     </>
