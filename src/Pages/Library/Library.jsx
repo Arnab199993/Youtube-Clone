@@ -10,7 +10,7 @@ const Library = () => {
     <div className='container-pages-app'>
         <LeftSidebar/>
         <div style={{color:"white"}} className="container2-pages-app">
-          Librarysssssss
+          Library
         </div>
     </div>
     </>
