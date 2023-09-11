@@ -10,7 +10,7 @@ import {
   MdWatchLater
 } from "react-icons/md";
 import Shorts from "../../../public/youtube-shorts-logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
   return (
     <>
@@ -44,7 +44,7 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
               </p>
               </NavLink>
             </div>
-            <div className="iconSidebarDiv">
+            <Link to={"/shorts"} className="iconSidebarDiv">
               <p>
                 <img
                   src={Shorts}
@@ -58,8 +58,8 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">Shorts</div>
               </p>
-            </div>
-            <div className="iconSidebarDiv">
+            </Link>
+            <Link to={"/subscription"} className="iconSidebarDiv">
               <p>
                 <MdSubscriptions
                   className="icon_sidebar"
@@ -68,7 +68,7 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">Subscription</div>
               </p>
-            </div>
+            </Link>
           </div>
           <div className="librarybtnleftsidebar">
             <div className="iconSidebarDiv">
@@ -83,7 +83,7 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
               </p>
               </NavLink>
             </div>
-            <div className="iconSidebarDiv">
+            <Link to={"/history"} className="iconSidebarDiv">
               <p>
                 <FaHistory
                   className="icon_sidebar"
@@ -92,8 +92,8 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">History</div>
               </p>
-            </div>
-            <div className="iconSidebarDiv">
+            </Link>
+            <Link to={"/yourVideos"} className="iconSidebarDiv">
               <p>
                 <AiFillPlaySquare
                   className="icon_sidebar"
@@ -102,8 +102,8 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">Your Videos</div>
               </p>
-            </div>
-            <div className="iconSidebarDiv">
+            </Link>
+            <Link to={"/watchLater"} className="iconSidebarDiv">
               <p>
                 <MdWatchLater
                   className="icon_sidebar"
@@ -112,8 +112,8 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">Watch Later</div>
               </p>
-            </div>
-            <div className="iconSidebarDiv">
+            </Link>
+            <Link to={"/liked-videos"} className="iconSidebarDiv">
               <p>
                 <AiFillLike
                   className="icon_sidebar"
@@ -122,7 +122,7 @@ const DrawSidebar = ({toggleDrawerSideBar,toggleBtn}) => {
                 />
                 <div className="text-sidebar-icon">Liked Videos</div>
               </p>
-            </div>
+            </Link>
           </div>
           <div className="subscription_lsdbar">
             <h3>Your Subscription</h3>

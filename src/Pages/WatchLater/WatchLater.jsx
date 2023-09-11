@@ -1,26 +1,27 @@
 import React, { useState } from 'react'
-import Navbar from '../../Component/Navbar/Navbar'
-import LeftSidebar from '../../Component/LeftSidebar/LeftSidebar'
+import Navbar from '../../Component/Navbar/Navbar';
 import DrawSidebar from '../../Component/LeftSidebar/DrawSidebar';
+import LeftSidebar from '../../Component/LeftSidebar/LeftSidebar';
 
-const Subscription = () => {
+const WatchLater = () => {
   const [toggleDrawerSideBar, settoggleDrawerSideBar] = useState(false);
   const toggleBtn = () => {
     settoggleDrawerSideBar(!toggleDrawerSideBar);
   };
   return (
     <>
-    <Navbar toggleBtn={toggleBtn} />
+      <div>
+        <Navbar toggleBtn={toggleBtn} />
         <DrawSidebar
           toggleDrawerSideBar={toggleDrawerSideBar}
           settoggleDrawerSideBar={settoggleDrawerSideBar}
           toggleBtn={toggleBtn}
         />
-        <LeftSidebar/>
-     <div>Subscription</div>
-    
+        <LeftSidebar />
+      </div>
+      ;
     </>
   )
 }
 
-export default Subscription
+export default WatchLater

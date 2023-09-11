@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./Component/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import DrawSidebar from "./Component/LeftSidebar/DrawSidebar";
+import Explore from "./Pages/Explore/Explore";
 
 function App() {
   const [toggleDrawerSideBar, settoggleDrawerSideBar] = useState(false);

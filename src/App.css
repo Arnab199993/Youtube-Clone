@@ -17,6 +17,9 @@ body{
     font-weight: bolder;
     cursor: pointer;
 }
+.fst-char-logo-app p{
+    margin: auto;
+}
 .container-pages-app{
     display: flex;
     background-color: rgb(19, 19,19);
@@ -26,4 +29,13 @@ body{
     height: calc(100vh - 3.65rem);
     border: 2px solid rgb(128,128,128,0.45);
     overflow-y: auto;
+}
+.video_box{
+    width: 21rem;
+    height: 17rem;
+    margin-bottom: 1rem;
+    border: 2px solid transparent;
+}
+video{
+    background-color: rgb(8,8,8,0.662);
 }

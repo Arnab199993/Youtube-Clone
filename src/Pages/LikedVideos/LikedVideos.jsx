@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import Navbar from "../../Component/Navbar/Navbar";
-import LeftSidebar from "../../Component/LeftSidebar/LeftSidebar";
-import DrawSidebar from "../../Component/LeftSidebar/DrawSidebar";
+import React, { useState } from 'react'
+import Navbar from '../../Component/Navbar/Navbar';
+import DrawSidebar from '../../Component/LeftSidebar/DrawSidebar';
+import LeftSidebar from '../../Component/LeftSidebar/LeftSidebar';
 
-const Library = () => {
+const LikedVideos = () => {
   const [toggleDrawerSideBar, settoggleDrawerSideBar] = useState(false);
   const toggleBtn = () => {
     settoggleDrawerSideBar(!toggleDrawerSideBar);
   };
   return (
     <>
+    <div>
       <Navbar toggleBtn={toggleBtn} />
       <DrawSidebar
         toggleDrawerSideBar={toggleDrawerSideBar}
@@ -17,8 +18,10 @@ const Library = () => {
         toggleBtn={toggleBtn}
       />
       <LeftSidebar />
-    </>
-  );
-};
+    </div>
+    ;
+  </>
+  )
+}
 
-export default Library;
+export default LikedVideos
