@@ -7,6 +7,7 @@ import History from "./Pages/History/History";
 import YourVideos from "./Pages/YourVideos/YourVideos";
 import WatchLater from "./Pages/WatchLater/WatchLater";
 import LikedVideos from "./Pages/LikedVideos/LikedVideos";
+import VideoPage from "./Pages/VideoPage/VideoPage";
 const Routes=[
     {
         path:"/",
@@ -43,6 +44,10 @@ const Routes=[
     {
         path:"/liked-videos",
         element:<LikedVideos/>
+    },
+    {
+        path:"/video-page/:id",
+        element:<VideoPage/>
     },
 ]
 export default Routes
