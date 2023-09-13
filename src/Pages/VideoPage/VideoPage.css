@@ -55,6 +55,7 @@
 .channel_details_videopage{
   border-bottom: 3px solid rgba(245, 222, 179,0.175);
   display: flex;
+  justify-content: space-between;
   text-decoration: none;
   color: aliceblue;
   /* font-weight: bolder; */
@@ -87,4 +88,21 @@
 .More_videoBar{
   width: calc(100vw - 4.5rem - 70vw);
   padding: 0px 1rem;
+}
+.Show_Button{
+  display: flex;
+}
+.inner_div_btn{
+  display: flex;
+  margin: auto;
+}
+.buttons{
+  display: flex;
+  margin-right: 1rem;
+  cursor: pointer;
+  background-color: black;
+}
+.buttons_texts{
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
 }

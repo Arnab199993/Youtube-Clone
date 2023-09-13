@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Video from "../../../public/istockphoto-1324924021-640_adpp_is.mp4";
 import "./VideoPage.css";
+import LikeWatchLaterSaveBtns from "./LikeWatchLaterSaveBtns";
+import {BiLike,BiDislike} from "react-icons/bi"
+import {PiShareFat} from "react-icons/pi"
+import {LiaDownloadSolid} from "react-icons/lia"
+import {AiFillLike,AiOutlineLike,AiFillDislike,AiOutlineDislike} from "react-icons/ai"
 const VideoPage = () => {
+  const [like,setLike]=useState(false)
+  const [dislike,setDisLike]=useState(false)
+  const colorChange=()=>{
+    setLike(!like)
+  }
   return (
     <>
       <div className="Container-Video_page">
         <div className="container2_videopage">
-          <div >
+          <div>
             <div className="Video_display_screen_videopage">
               <video
                 controls
@@ -24,10 +34,40 @@ const VideoPage = () => {
                   </div>
                 </div>
               </div>
+              <div>{/* <LikeWatchLaterSaveBtns/> */}</div>
               <div className="channel_details_videopage">
-                <div className="Channel_logo_videopage"> {/**className="Channel_logo_videopage" */}
+                <div className="Channel_logo_videopage">
+                  {" "}
+                  {/**className="Channel_logo_videopage" */}
                   <span className="channel_logo">C</span>
-                  <span className="Channel_Name_Videopage">Channel Name</span> {/*className="Channel_Name_Videopage"*/}
+                  <span className="Channel_Name_Videopage">
+                    Channel Name
+                  </span>{" "}
+                  {/*className="Channel_Name_Videopage"*/}
+                </div>
+                <div  className="Show_Button">
+                <div className="inner_div_btn">
+                  <div  className="buttons">
+                    {like?<AiFillLike onClick={colorChange}  size={22}/>:<AiOutlineLike onClick={colorChange}  size={22}/>}
+                    <div className="buttons_texts">
+                      24k
+                    </div>
+                  </div>
+                  <div className="buttons">
+                    {dislike?<AiFillDislike onClick={()=>setDisLike(!dislike)}  size={22}/>:<AiOutlineDislike onClick={()=>setDisLike(!dislike)} size={22}/>}
+                  </div>
+                  <div className="buttons">
+                    <PiShareFat size={22}/>
+                  </div>
+                  <div className="buttons">
+                    <LiaDownloadSolid size={22}/>
+                    <div className="buttons_texts">
+                      Downloads
+                    </div>
+                  </div>
+                </div>
+
+                  <LikeWatchLaterSaveBtns />
                 </div>
               </div>
               <div className="Comments_Videopage">

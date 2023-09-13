@@ -1,0 +1,73 @@
+.Btn_cont_video_page{
+    flex-grow: 5;
+}
+.Btn_videopage{
+    margin: auto 0;
+}
+.LikeVideoPage{
+    display: flex;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.Btn_videopage{
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+.threedots:hover{
+    background-color: rgba(238, 231, 231, 0.582);
+}
+.threedots_options{
+    margin-top: 0.2rem;
+    position: absolute;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 8rem;
+    height: 9rem;
+}
+.Btns-Videopage{
+    margin: auto 0.5rem;
+}
+.Save-btn{
+    display: flex;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+}
+.Save-btn:hover{
+    background-color: rgb(206, 199, 199);
+}
+.clipOption{
+    display: flex;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+.save_text{
+    margin-left: 1rem;  
+}
+
+.threedots{
+    padding: 0.5rem;
+    border-radius: 100%;
+}
+.clipOption:hover{
+    background-color: rgb(206, 199, 199);
+}
+.heart-btn:hover{
+    background-color: rgb(206, 199, 199);
+}
+.heart-btn{
+    display: flex;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+.report-btn{
+    display: flex;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+.report-btn:hover{
+    background-color: rgb(206, 199, 199); 
+}
+
