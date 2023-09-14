@@ -6,6 +6,7 @@ import {BiLike,BiDislike} from "react-icons/bi"
 import {PiShareFat} from "react-icons/pi"
 import {LiaDownloadSolid} from "react-icons/lia"
 import {AiFillLike,AiOutlineLike,AiFillDislike,AiOutlineDislike} from "react-icons/ai"
+import Comments from "../../Component/Comments/Comments";
 const VideoPage = () => {
   const [like,setLike]=useState(false)
   const [dislike,setDisLike]=useState(false)
@@ -74,6 +75,7 @@ const VideoPage = () => {
                 <h2>
                   <u>Comments</u>
                 </h2>
+                <Comments/>
               </div>
             </div>
           </div>
