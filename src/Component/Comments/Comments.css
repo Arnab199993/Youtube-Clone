@@ -1,68 +1,161 @@
-.comments_of_form_comments{
-    display: flex;
-    /* width: 70%; */
+.comments_of_form_comments {
+  display: flex;
+  /* width: 70%; */
 }
-.comment_ibox{
-    /* width: 80%; */
-    width: 100%;
-    padding: 0.5%;
-    padding-left: 2%;
-    background-color: transparent;
-    border: 0;
-    color: wheat;
-    border-bottom: 2px solid #D3D3D3;
-    outline: none;
+.comment_ibox {
+  /* width: 80%; */
+  width: 100%;
+  padding: 0.5%;
+  padding-left: 2%;
+  background-color: transparent;
+  border: 0;
+  color: wheat;
+  border-bottom: 2px solid #d3d3d3;
+  outline: none;
 }
-.comment_ibox_change{
-    /* width: 80%; */
-    width: 100%;
-    padding: 0.5%;
-    padding-left: 2%;
-    background-color: transparent;
-    border: 0;
-    color: wheat;
-    border-bottom: 2px solid #A9A9A9;
-    outline: none;
+.comment_ibox_change {
+  /* width: 80%; */
+  width: 100%;
+  padding: 0.5%;
+  padding-left: 2%;
+  background-color: transparent;
+  border: 0;
+  color: wheat;
+  border-bottom: 2px solid #a9a9a9;
+  outline: none;
 }
-.comment_add_button_comments{
-    cursor: pointer;
-    /* border: 2px solid transparent; */
-    /* border-bottom: 2px solid rgb(64, 64, 64); */
-    /* background-color: transparent; */
-    color: aliceblue;
-    /* font-size: large; */
-    font-size: medium;
-    /* width: 20%; */
-    width: 10%;
-    padding: 0.5rem;
-    margin-left: 1%;
-    color: black;
-    border-radius: 20px;
-    margin-top: 0.5rem;
-    /* background-color: 	#D3D3D3; */
+.comment_add_button_comments {
+  cursor: pointer;
+  /* border: 2px solid transparent; */
+  /* border-bottom: 2px solid rgb(64, 64, 64); */
+  /* background-color: transparent; */
+  /* color: aliceblue; */
+  /* font-size: large; */
+  font-size: medium;
+  /* width: 20%; */
+  width: 10%;
+  padding: 0.5rem;
+  margin-left: 1%;
+  color: black;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  /* background-color: 	#D3D3D3; */
+  background-color: rgb(0, 150, 255);
 }
-.comment_cancel_button_comments{
-    cursor: pointer;
-    /* border: 2px solid transparent; */
-    /* border-bottom: 2px solid rgb(64, 64, 64); */
-    /* background-color: transparent; */
-    color: aliceblue;
-    /* font-size: large; */
-    font-size: medium;
-    /* width: 20%; */
-    width: 10%;
-    padding: 0.5rem;
-    margin-left: 79%;
-    color: black;
-    border-radius: 20px;
-    margin-top: 0.5rem;
-    /* background-color: 	#D3D3D3; */
+.NOcomment_add_button_comments {
+  cursor: pointer;
+  /* border: 2px solid transparent; */
+  /* border-bottom: 2px solid rgb(64, 64, 64); */
+  /* background-color: transparent; */
+  color: aliceblue;
+  /* font-size: large; */
+  font-size: medium;
+  /* width: 20%; */
+  width: 10%;
+  padding: 0.5rem;
+  margin-left: 1%;
+  color: black;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  /* background-color: 	#D3D3D3; */
 }
-.comment_add_button_comments:hover{
-    /* border: 2px solid rgb(64, 64, 64,0.05);
+.comment_cancel_button_comments {
+  cursor: pointer;
+  /* border: 2px solid transparent; */
+  /* border-bottom: 2px solid rgb(64, 64, 64); */
+  /* background-color: transparent; */
+  color: aliceblue;
+  /* font-size: large; */
+  font-size: medium;
+  /* width: 20%; */
+  width: 10%;
+  padding: 0.5rem;
+  margin-left: 79%;
+  color: black;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  /* background-color: 	#D3D3D3; */
+}
+/* .comment_add_button_comments:hover {
+  border: 2px solid rgb(64, 64, 64,0.05);
     border-bottom: 2px solid rgb(64, 64, 64);
-    background-color: rgba(240,248,255,0.05); */
+    background-color: rgba(240,248,255,0.05);
+} */
+.display_comment_container {
+  padding: 1rem;
 }
-.display_comment_container{
-    padding: 1rem;
+/** 
+display Comment Section
+**/
+.CommentBody{
+    color: rgb(197, 197, 197);
+    margin: 0;
+    margin-top: 0.3rem;
+}
+.User_Commented{
+    color: rgb(50,50,50);
+    margin: 0;
+}
+.comment_container{
+    line-height: 16px;
+}
+.whole_comment_container{
+    display: flex;
+    justify-content: space-between;
+}
+.threedotcomment{
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+}
+.Edit_delete_Option_div{
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #353935;
+}
+.actions_Edit{
+    padding-left: 30px;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+}
+.actions_Delete{
+    padding-left: 30px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.actions_Edit:hover{
+    background-color: #a9a9a9;
+    color: black;
+}
+.actions_Delete:hover{
+    background-color: #a9a9a9;
+    color: black;
+}
+.threedotcomment:hover{
+    background-color: #EEE7e794;
+    border-radius: 100%;
+}
+/* New Code*/
+.saveBtn{
+    padding: 0.5rem;
+    width: 4rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.CancelBtn{
+    padding: 0.5rem;
+    width: 4rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+.Btn_cont{
+    margin-top: 0.5rem;
 }
