@@ -102,6 +102,7 @@ display Comment Section
 .whole_comment_container{
     display: flex;
     justify-content: space-between;
+
 }
 .threedotcomment{
     cursor: pointer;

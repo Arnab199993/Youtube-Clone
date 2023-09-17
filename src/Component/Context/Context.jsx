@@ -67,6 +67,70 @@ const Context = ({ children }) => {
       uploader:"abc",
       title:"video 3",
       description:"Description of video 3"
+    },
+    {
+      id:9,
+      video_src:istockphoto,
+      channel:"62bafe6752cea35a6c30695f",
+      uploader:"abc",
+      title:"video 1",
+      description:"Description of video 1"
+    },
+    {
+      id:10,
+      video_src:istockphoto,
+      channel:"cdd",
+      uploader:"abc",
+      title:"video 2",
+      description:"Description of video 2"
+    },
+    {
+      id:11,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
+    },
+    {
+      id:12,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
+    },
+    {
+      id:13,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
+    },
+    {
+      id:14,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
+    },
+    {
+      id:15,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
+    },
+    {
+      id:16,
+      video_src:istockphoto,
+      channel:"add",
+      uploader:"abc",
+      title:"video 3",
+      description:"Description of video 3"
     }
      
   ]

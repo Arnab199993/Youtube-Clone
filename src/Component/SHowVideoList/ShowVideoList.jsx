@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-import Navbar from "../../Component/Navbar/Navbar";
-import DrawSidebar from "../../Component/LeftSidebar/DrawSidebar";
-import LeftSidebar from "../../Component/LeftSidebar/LeftSidebar";
-import WHL from "../../Component/WHL/WHL";
+import React from "react";
 import istockphoto from "../../../public/istockphoto-1324924021-640_adpp_is.mp4";
-const WatchLater = () => {
-  const [toggleDrawerSideBar, settoggleDrawerSideBar] = useState(false);
-  const toggleBtn = () => {
-    settoggleDrawerSideBar(!toggleDrawerSideBar);
-  };
-  const WatchLater = [
+import ShowVideo from "../ShowVideo/ShowVideo";
+import "./ShowVideoList.css"
+const ShowVideoList = ({ videoId }) => {
+  const Vids = [
     {
       id: 1,
       video_src: istockphoto,
@@ -75,28 +69,20 @@ const WatchLater = () => {
       description: "Description of video 3",
     },
   ];
+  console.log("VIDSSSSSSSSS",Vids)
   return (
     <>
-      <div>
-      <div className="container-pages-app">
-        <div className="bdy_cont_2">
-          <Navbar toggleBtn={toggleBtn} />
-          <DrawSidebar
-            toggleDrawerSideBar={toggleDrawerSideBar}
-            settoggleDrawerSideBar={settoggleDrawerSideBar}
-            toggleBtn={toggleBtn}
-          />
-          <div className="body_cont">
-            <LeftSidebar />
-            <div className="History_Body">
-              <WHL Page={"Watch Later Videos"} VideoList={WatchLater} />
-            </div>
+      <div className="Container_ShowvideoGrid_History">
+        {Vids?.filter((ele) => ele.id === videoId).map((item) => (
+          <div className="Video_Container">
+            <div key={item?.id} className="video_box_History">
+            <ShowVideo className={"Video_DIv"}  video={item} />
           </div>
-        </div>
+          </div>
+        ))}
       </div>
-    </div> 
     </>
   );
 };
 
-export default WatchLater;
+export default ShowVideoList;

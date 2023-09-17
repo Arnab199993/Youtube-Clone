@@ -1,0 +1,10 @@
+
+.Video_Container{
+    padding: 1rem;
+}
+.video_box_History{
+    width: 21rem;
+    height: 17rem;
+    margin-bottom: 1rem;
+    border: 2px solid transparent;
+}

@@ -13,22 +13,22 @@ const DisplayComments = ({
   const [Edit, SetEdit] = useState(false);
   const [change, setChange] = useState(false);
   const [comment, setComment] = useState("");
-  const [commentBdy,setCommentBdy]=useState("")
+  const [commentBdy, setCommentBdy] = useState("");
   const [editIndex, setEditIndex] = useState("");
   const [editStatus, setEditStatus] = useState(false);
-  
-//   const handleChange=(event)=>{
-   
-//   }
+
+  //   const handleChange=(event)=>{
+
+  //   }
   const populateEditData = (ctId, ctBd) => {
-    setCommentBdy(ctBd)
+    setCommentBdy(ctBd);
     SetEdit(true);
     setEditIndex(index);
     setEditStatus(true);
   };
-//   const handleEdit = () => {
-//     setEditStatus(true);
-//   };
+  //   const handleEdit = () => {
+  //     setEditStatus(true);
+  //   };
   //   const handleEdit=(ctId,ctBd)=>{
   //     SetEdit(true)
   //     setComment(ctBd)
@@ -39,7 +39,7 @@ const DisplayComments = ({
   };
   const handleComment = (e) => {
     setComment(e.target.value);
-    setCommentBdy(e.target.value)
+    setCommentBdy(e.target.value);
   };
   useEffect(() => {
     document.addEventListener("mousedown", (e) => {
@@ -48,25 +48,23 @@ const DisplayComments = ({
       }
     });
   }, []);
-  const handleCancel=()=>{
-    setFashion(updatedData)
-    setEditStatus(false)
-    setEditIndex(null)
-    setTask(defaultState)      
-
-
+  const handleCancel = () => {
+    setFashion(updatedData);
+    setEditStatus(false);
+    setEditIndex(null);
+    setTask(defaultState);
 
     setComment(defaultState);
     setEditStatus(false);
-    setCommentBdy("")
-    setComment("")
-    setEditIndex("")
-    setEditStatus(false)
-  }
-  const handleSave=()=>{
-    setEditStatus(false)
-    setCommentBdy("")
-  }
+    setCommentBdy("");
+    setComment("");
+    setEditIndex("");
+    setEditStatus(false);
+  };
+  const handleSave = () => {
+    setEditStatus(false);
+    setCommentBdy("");
+  };
 
   //   const handleDelete=()=>{
   //     commentsList.splice(ID,1)
@@ -82,7 +80,7 @@ const DisplayComments = ({
     <>
       <div ref={refElem}>
         <div className="whole_comment_container">
-          <div style={{width:"60rem"}} className="comment_container">
+          <div  style={{ width: "60rem"}} className="comment_container">
             {Edit ? (
               <>
                 <form className="comments_of_form_comments">
@@ -105,16 +103,19 @@ const DisplayComments = ({
                       placeholder="Edit Comment..."
                       value={commentBdy}
                       name="cmt"
-                      
                     />
                   )}
                 </form>
                 {editStatus ? (
                   <>
-                   <div className="Btn_cont">
-                   <button className="saveBtn" onClick={handleSave}>Save</button>
-                    <button className="CancelBtn" onClick={handleCancel}>Cancel</button>
-                   </div>
+                    <div className="Btn_cont">
+                      <button className="saveBtn" onClick={handleSave}>
+                        Save
+                      </button>
+                      <button className="CancelBtn" onClick={handleCancel}>
+                        Cancel
+                      </button>
+                    </div>
                   </>
                 ) : (
                   ""
@@ -126,8 +127,6 @@ const DisplayComments = ({
                 <div className="CommentBody">{commentBody}</div>
               </>
             )}
-            {/* <div className="User_Commented">{userCommented}</div>
-            <div className="CommentBody">{commentBody}</div> */}
             <br></br>
           </div>
           <div>
@@ -135,6 +134,7 @@ const DisplayComments = ({
               className="threedotcomment"
               onClick={() => setShowAction(!showAction)}
             />
+            <div>
             {showAction ? (
               <div className="Edit_delete_Option_div">
                 <div
@@ -150,6 +150,7 @@ const DisplayComments = ({
             ) : (
               ""
             )}
+            </div>
           </div>
         </div>
       </div>

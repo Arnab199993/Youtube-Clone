@@ -30,6 +30,7 @@ body{
     height: calc(100vh - 3.65rem);
     border: 2px solid rgb(128,128,128,0.45);
     overflow-y: auto;
+    color:"white"
 }
 .video_box{
     width: 21rem;

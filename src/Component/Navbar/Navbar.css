@@ -3,6 +3,8 @@
     display: flex;
     height: calc(3.5rem - 2px);
     background-color: rgb(33, 33,33);
+    position: sticky;
+    top:0%
 }
 .Burger-Logo-Navbar{
     display: flex;
