@@ -1,7 +1,7 @@
 import React from "react";
 import istockphoto from "../../../public/istockphoto-1324924021-640_adpp_is.mp4";
 import ShowVideo from "../ShowVideo/ShowVideo";
-import "./ShowVideoList.css"
+import "./ShowVideoList.css";
 const ShowVideoList = ({ videoId }) => {
   const Vids = [
     {
@@ -69,15 +69,15 @@ const ShowVideoList = ({ videoId }) => {
       description: "Description of video 3",
     },
   ];
-  console.log("VIDSSSSSSSSS",Vids)
+  console.log("VIDSSSSSSSSS", Vids);
   return (
     <>
       <div className="Container_ShowvideoGrid_History">
         {Vids?.filter((ele) => ele.id === videoId).map((item) => (
-          <div className="Video_Container">
+          <div  className="Video_Container">
             <div key={item?.id} className="video_box_History">
-            <ShowVideo className={"Video_DIv"}  video={item} />
-          </div>
+              <ShowVideo className={"Video_DIv"} video={item} />
+            </div>
           </div>
         ))}
       </div>

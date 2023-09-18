@@ -23,7 +23,10 @@ const ShowVideo = (props) => {
                 <span>5 views</span>
                 <span className="dot"></span>
               </div>
-              <span className="second-line"><div className="dot"></div></span><span className="videoline">video uploaded 1 year ago</span>
+              <span className="second-line">
+                <div className="dot"></div>
+              </span>
+              <span className="videoline">video uploaded 1 year ago</span>
             </pre>
           </div>
         </div>
