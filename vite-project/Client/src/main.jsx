@@ -8,11 +8,16 @@ import {
 } from "react-router-dom";
 import Routes from './Routes.jsx';
 import Context from './Component/Context/Context.jsx';
+import { Provider } from 'react-redux';
+import Store from './Redux/Store.jsx';
 const router = createBrowserRouter(Routes)
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={Store}>
+    <React.StrictMode>
     <Context>
     <RouterProvider router={router} />
     </Context> 
   </React.StrictMode>,
+  </Provider>
+  
 )

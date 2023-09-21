@@ -1,7 +1,6 @@
 import React from "react";
 import "./ShowVideo.css";
 const ShowVideo = (props) => {
-  console.log("videooooooooooooo", props.video);
   return (
     <>
       <div style={{ color: "white" }}>
