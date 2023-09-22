@@ -7,35 +7,37 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
-import {gapi} from "gapi-script"
+import { gapi } from "gapi-script";
 const Navbar = ({ toggleBtn }) => {
   const [currentUser, setCurrentUser] = useState("");
-  const onSuccess=(response)=>{
-    console.log("responserrrrrrr",response)
-    const Email=response?.profileObj?.email;
-    console.log("EMAIL",Email)
-  }
-  const onFailure=(res)=>{
-    console.log("Failures",res)
-  }
+  const onSuccess = (response) => {
+    console.log("responserrrrrrr", response);
+    const Email = response?.profileObj?.email;
+    console.log("EMAIL", Email);
+  };
+  const onFailure = (res) => {
+    console.log("Failures", res);
+  };
   // const currentUser={
   //   result:{
   //     email:"arnabdutta623@gmail.com",
   //     joinedOn:"2022-07-15T09:57:23.4892"
   //   },
   // }
-  const fetchApi=()=>{
-    const start=()=>{
+  const fetchApi = () => {
+    const start = () => {
       gapi.client.init({
-        clientId:"901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com",
-        scope:"email"
-      })
-    }
-    gapi.load("client:auth2",start)
-  }
-  useEffect(()=>{
-    fetchApi()
-  },[])
+        clientId:
+          "901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com",
+        scope: "email",
+      });
+    };
+    gapi.load("client:auth2", start);
+  };
+  useEffect(() => {
+    fetchApi();
+  }, []);
+  
   return (
     <div className="Container-Navbar">
       <div className="Burger-Logo-Navbar">
@@ -82,10 +84,10 @@ const Navbar = ({ toggleBtn }) => {
           </>
         ) : (
           <>
-            <GoogleLogin 
-            clientId="901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
+            <GoogleLogin
+              clientId={"901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com"}
+              onSuccess={onSuccess}
+              onFailure={onFailure}
             />
             <p className="authBtn">
               <BiUserCircle size={22} />
