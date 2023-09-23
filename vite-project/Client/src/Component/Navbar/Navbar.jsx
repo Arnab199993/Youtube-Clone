@@ -28,7 +28,7 @@ const Navbar = ({ toggleBtn }) => {
     const start = () => {
       gapi.client.init({
         clientId:
-          "901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com",
+          "901094459537-0apnqq4bqnt3i7gudqhul1u2nc0sq1o0.apps.googleusercontent.com",
         scope: "email",
       });
     };
@@ -85,7 +85,7 @@ const Navbar = ({ toggleBtn }) => {
         ) : (
           <>
             <GoogleLogin
-              clientId={"901094459537-oihi5r1i36dt3g0qnmslqej9ku064oa6.apps.googleusercontent.com"}
+              clientId={"901094459537-0apnqq4bqnt3i7gudqhul1u2nc0sq1o0.apps.googleusercontent.com"}
               onSuccess={onSuccess}
               onFailure={onFailure}
             />
