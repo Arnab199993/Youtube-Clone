@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.css";
 import Youtube from "../../../public/youtube.png";
 import Searchbar from "../Searchbar/Searchbar";
@@ -6,38 +6,53 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { GoogleLogin } from "react-google-login";
-import { gapi } from "gapi-script";
+// import { GoogleLogin } from "react-google-login";
+// import { gapi } from "gapi-script";
+import { auth, provider } from "../../Api/Config";
+import { signInWithPopup } from "firebase/auth";
+
 const Navbar = ({ toggleBtn }) => {
-  const [currentUser, setCurrentUser] = useState("");
-  const onSuccess = (response) => {
-    console.log("responserrrrrrr", response);
-    const Email = response?.profileObj?.email;
-    console.log("EMAIL", Email);
-  };
-  const onFailure = (res) => {
-    console.log("Failures", res);
-  };
-  // const currentUser={
-  //   result:{
-  //     email:"arnabdutta623@gmail.com",
-  //     joinedOn:"2022-07-15T09:57:23.4892"
-  //   },
-  // }
-  const fetchApi = () => {
-    const start = () => {
-      gapi.client.init({
-        clientId:
-          "901094459537-0apnqq4bqnt3i7gudqhul1u2nc0sq1o0.apps.googleusercontent.com",
-        scope: "email",
-      });
-    };
-    gapi.load("client:auth2", start);
+  const clientId =
+    "901094459537-s23a5t5hu9jescqmr40g175ckgumtifo.apps.googleusercontent.com";
+  // const [currentUser, setCurrentUser] = useState("");
+  const [authData, setAuthData] = useState("");
+  console.log("AUthData",authData)
+
+  const handleClick = () => {
+    signInWithPopup(auth, provider).then((data) => {
+      setAuthData(data.user.email);
+      localStorage.setItem("email", data?.user?.email);
+    });
   };
   useEffect(() => {
-    fetchApi();
+    setAuthData(localStorage.getItem("email"));
   }, []);
-  
+
+  // const onSuccess = (response) => {
+  //   console.log("responserrrrrrr", response);
+  //   const Email = response?.profileObj?.email;
+  //   console.log("EMAIL", Email);
+  // };
+
+  // const onFailure = (res) => {
+  //   console.log("Failures", res);
+  // };
+
+  // const fetchApi = () => {
+  //   const start = () => {
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: "email",
+  //     });
+  //   };
+
+  //   gapi.load("client:auth2", start);
+  // };
+
+  // useEffect(() => {
+  //   fetchApi();
+  // }, []);
+
   return (
     <div className="Container-Navbar">
       <div className="Burger-Logo-Navbar">
@@ -70,31 +85,27 @@ const Navbar = ({ toggleBtn }) => {
       </div>
       <IoMdNotificationsOutline size={22} className="bell-icon" />
       <div className="auth-cont-navbar">
-        {currentUser ? (
+        {authData ? (
           <>
             <div className="Channel-Logo">
               <p className="fst-char-logo-app">
-                {currentUser?.result?.name ? (
-                  <>{currentUser?.result?.name?.charAt(0).toUpperCase()}</>
+                {authData?.result?.name ? (
+                  <>{authData?.result?.name?.charAt(0).toUpperCase()}</>
                 ) : (
-                  <>{currentUser?.result?.email?.charAt(0).toUpperCase()}</>
+                  <>{authData?.charAt(0).toUpperCase()}</>
                 )}
               </p>
             </div>
           </>
         ) : (
           <>
-            <GoogleLogin
-              clientId={"901094459537-0apnqq4bqnt3i7gudqhul1u2nc0sq1o0.apps.googleusercontent.com"}
-              onSuccess={onSuccess}
-              onFailure={onFailure}
-            />
-            <p className="authBtn">
-              <BiUserCircle size={22} />
-              <b>Sign In</b>
-            </p>
+              <p onClick={handleClick} className="authBtn">
+                <BiUserCircle size={22} />
+                <b>Sign In</b>
+              </p>
           </>
         )}
+        
       </div>
     </div>
   );

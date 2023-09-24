@@ -20,3 +20,4 @@ mongoose
     console.log(error);
   });
 //mongodb+srv://Arnab199993:<password>@cluster0.symytbj.mongodb.net/?retryWrites=true&w=majority
+//http://localhost:5500/

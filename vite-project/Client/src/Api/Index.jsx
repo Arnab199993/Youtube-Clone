@@ -6,3 +6,4 @@ API.interceptors.request.use(req=>{
     }
     return req
 })
+const login=(authData)=>API.post("/user/login",authData)
