@@ -6,52 +6,28 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-// import { GoogleLogin } from "react-google-login";
-// import { gapi } from "gapi-script";
+import {useDispatch} from "react-redux"
 import { auth, provider } from "../../Api/Config";
 import { signInWithPopup } from "firebase/auth";
-
+import { loginUser } from "../../Redux/Slice";
 const Navbar = ({ toggleBtn }) => {
+  const dispatch=useDispatch()
   const clientId =
     "901094459537-s23a5t5hu9jescqmr40g175ckgumtifo.apps.googleusercontent.com";
-  // const [currentUser, setCurrentUser] = useState("");
   const [authData, setAuthData] = useState("");
-  console.log("AUthData",authData)
+  console.log("AUthData", authData);
 
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
       setAuthData(data.user.email);
       localStorage.setItem("email", data?.user?.email);
     });
+    dispatch(loginUser({email:authData}))
   };
   useEffect(() => {
     setAuthData(localStorage.getItem("email"));
   }, []);
 
-  // const onSuccess = (response) => {
-  //   console.log("responserrrrrrr", response);
-  //   const Email = response?.profileObj?.email;
-  //   console.log("EMAIL", Email);
-  // };
-
-  // const onFailure = (res) => {
-  //   console.log("Failures", res);
-  // };
-
-  // const fetchApi = () => {
-  //   const start = () => {
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: "email",
-  //     });
-  //   };
-
-  //   gapi.load("client:auth2", start);
-  // };
-
-  // useEffect(() => {
-  //   fetchApi();
-  // }, []);
 
   return (
     <div className="Container-Navbar">
@@ -99,13 +75,12 @@ const Navbar = ({ toggleBtn }) => {
           </>
         ) : (
           <>
-              <p onClick={handleClick} className="authBtn">
-                <BiUserCircle size={22} />
-                <b>Sign In</b>
-              </p>
+            <p onClick={handleClick} className="authBtn">
+              <BiUserCircle size={22} />
+              <b>Sign In</b>
+            </p>
           </>
         )}
-        
       </div>
     </div>
   );

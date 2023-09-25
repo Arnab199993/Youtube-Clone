@@ -1,11 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRoutes from "./Routes/userRoutes";
 const app = express();
 dotenv.config();
 app.get("/", (req, res) => {
   res.send("Hello");
 });
+app.use("/user",userRoutes)
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server Running on the port ${PORT}  ...`);

@@ -1,17 +1,36 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
-import AuthReducer from "./Reducer/Auth"
+import * as api from "../Api/Index";
+// import AuthReducer from "./Reducer/Auth"
 const initialState={
-    num:0
+    data:""
 }
 const Slice=createSlice({
     name:"Youtube Clone",
     initialState,
     reducers:{
-        AuthReducer
+        // AuthReducer,
+        loginSuccess:(state,action)=>{
+            return action.payload
+        },
+        loginFailure:(state,action)=>{
+            return state
+        },
+        authReducers:(state,action)=>{
+            localStorage.setItem("Profile",JSON.stringify({...action.payload}))
+            state.data = action.payload
+        }
     }
 })
 export default Slice.reducer
-export const {add}=Slice.actions
+export const {loginSuccess,loginFailure,authReducers}=Slice.actions
+export const loginUser=(authData)=>async(dispatch)=>{
+    try{
+        const {data}=await api.login(authData);
+        dispatch(loginSuccess(data))
+    }catch(error){
+        dispatch(loginFailure(error.message))
+    }
+}
 
 
 // src/store/authSlice.js
