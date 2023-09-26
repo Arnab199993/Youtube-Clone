@@ -33,6 +33,21 @@ export const loginUser=(authData)=>async(dispatch)=>{
 }
 
 
+
+// onSubmit={handleSubmit((data) => {
+//     const url = "http://localhost:3000/api/users/login";
+//     axios
+//       .post(url, data)
+//       .then((response) => {
+//         console.log(response);
+//         // console.log(response.data.accessToken);
+//         localStorage.setItem(
+//           "accessToken",
+//           response.data.accessToken
+//         );
+//         navigate("/");
+//       })
+
 // src/store/authSlice.js
 // import { createSlice } from '@reduxjs/toolkit';
 

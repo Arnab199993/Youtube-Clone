@@ -6,28 +6,34 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { auth, provider } from "../../Api/Config";
 import { signInWithPopup } from "firebase/auth";
 import { loginUser } from "../../Redux/Slice";
+import axios from "axios";
+
 const Navbar = ({ toggleBtn }) => {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const clientId =
     "901094459537-s23a5t5hu9jescqmr40g175ckgumtifo.apps.googleusercontent.com";
   const [authData, setAuthData] = useState("");
-  console.log("AUthData", authData);
+  console.log("AUthDataaaaa", authData);
 
-  const handleClick = () => {
+  const handleClick = async() => {
     signInWithPopup(auth, provider).then((data) => {
       setAuthData(data.user.email);
       localStorage.setItem("email", data?.user?.email);
     });
-    dispatch(loginUser({email:authData}))
+    dispatch(loginUser({ email: authData }));
+    //Anujs Code
+    // const response = await axios.post("http://localhost:5500/user/login", authData);
+    // const dataList = await response.data;
+    // console.log("DATAAAAAAAAA",response)
+    //Anujs Code
   };
   useEffect(() => {
     setAuthData(localStorage.getItem("email"));
   }, []);
-
 
   return (
     <div className="Container-Navbar">
