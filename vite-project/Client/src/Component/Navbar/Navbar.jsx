@@ -8,6 +8,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { auth, provider } from "../../Api/Config";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
 import { loginUser } from "../../Redux/Slice";
 import axios from "axios";
@@ -19,18 +20,29 @@ const Navbar = ({ toggleBtn }) => {
   const [authData, setAuthData] = useState("");
   console.log("AUthDataaaaa", authData);
 
-  const handleClick = async() => {
-    signInWithPopup(auth, provider).then((data) => {
-      setAuthData(data.user.email);
-      localStorage.setItem("email", data?.user?.email);
-    });
-    dispatch(loginUser({ email: authData }));
-    //Anujs Code
-    // const response = await axios.post("http://localhost:5500/user/login", authData);
-    // const dataList = await response.data;
-    // console.log("DATAAAAAAAAA",response)
-    //Anujs Code
+  const handleClick = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const userData = result.user;
+      setAuthData(userData.email);
+      localStorage.setItem("email", userData.email);
+      dispatch(loginUser({ email: userData.email }));
+    } catch (error) {
+      console.error("Sign-in error:", error);
+    }
   };
+  /**
+   const authorization = getAuth();
+    // const user = authorization.currentUser;
+    // console.log("FirebaseUser", user);
+    // onAuthStateChanged(authorization, (user) => {
+    //   if (user) {
+    //     const uid = user.uid;
+    //     console.log("UUUUUUID", uid);
+    //   } else {
+    //   }
+    // });
+   */
   useEffect(() => {
     setAuthData(localStorage.getItem("email"));
   }, []);
