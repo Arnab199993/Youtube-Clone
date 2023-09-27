@@ -6,7 +6,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth, provider } from "../../Api/Config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { signInWithPopup } from "firebase/auth";
@@ -15,6 +15,7 @@ import axios from "axios";
 
 const Navbar = ({ toggleBtn }) => {
   const dispatch = useDispatch();
+
   const clientId =
     "901094459537-s23a5t5hu9jescqmr40g175ckgumtifo.apps.googleusercontent.com";
   const [authData, setAuthData] = useState("");
@@ -31,6 +32,8 @@ const Navbar = ({ toggleBtn }) => {
       console.error("Sign-in error:", error);
     }
   };
+  const currentUSer = useSelector((state)=>state.CurrentUserReducer);
+  console.log("currentUSerrrr",currentUSer)
   /**
    const authorization = getAuth();
     // const user = authorization.currentUser;
