@@ -44,6 +44,7 @@ export const loginUser = (authData) => async (dispatch) => {
   try {
     const { data } = await api.login(authData);
     dispatch(loginSuccess(data));
+    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))))
     // console.log("API_RES",  dispatch(loginSuccess(data)));
   } catch (error) {
     dispatch(loginFailure(error.message));
