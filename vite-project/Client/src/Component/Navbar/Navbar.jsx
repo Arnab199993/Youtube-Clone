@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./Navbar.css";
 import Youtube from "../../../public/youtube.png";
@@ -13,38 +13,25 @@ import { signInWithPopup, signOut } from "firebase/auth";
 import { loginUser } from "../../Redux/Slice";
 import axios from "axios";
 import Auth from "../../Pages/Auth/Auth";
-const Navbar = ({ toggleBtn }) => {
+import { UseContextAPi } from "../Context/Context";
+
+const Navbar = ({ toggleBtn,handleCreate,setEditCreateChannelBtn }) => {
+  const { handleClick, authData, setAuthData } = UseContextAPi();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  // console.log("signOuttt",signOut)
   const clientId =
     "901094459537-s23a5t5hu9jescqmr40g175ckgumtifo.apps.googleusercontent.com";
-  const [authData, setAuthData] = useState("");
-  console.log("AUthDataaaaa", authData);
 
-  const handleClick = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("REsss", result);
-      const accessToken = result.user.accessToken;
-      // console.log("accessToken", accessToken);
-      const userData = result.user;
-      setAuthData(userData.email);
-      localStorage.setItem("email", userData.email);
-      localStorage.setItem("access-token", accessToken);
-      dispatch(loginUser({ email: userData.email }));
-    } catch (error) {
-      console.error("Sign-in error:", error);
-    }
+  const LogOut = async () => {
+    await auth.signOut(authData);
+    localStorage.removeItem("email");
+    localStorage.removeItem("access-token");
     window.location.reload();
   };
-  const LogOut = async () => {
-     await auth.signOut(authData);
-      localStorage.removeItem("email");
-      localStorage.removeItem("access-token");
-      window.location.reload();
-  };
+  const handleCreateYourChannelModal=()=>{
+    setShow(false)
+  }
   useEffect(() => {
     setAuthData(localStorage.getItem("email"));
   }, []);
@@ -85,7 +72,7 @@ const Navbar = ({ toggleBtn }) => {
           {authData ? (
             <>
               <div
-                onClick={() => setShow((prev) => !prev)}
+                onClick={() => {setShow((prev) => !prev)}}
                 className="Channel-Logo"
               >
                 <p className="fst-char-logo-app">
@@ -107,7 +94,7 @@ const Navbar = ({ toggleBtn }) => {
           )}
         </div>
       </div>
-      {show ? <Auth logOut={LogOut} user={authData} /> : ""}
+      {show ? <Auth setEditCreateChannelBtn={setEditCreateChannelBtn} handleCreateYourChannelModal={handleCreateYourChannelModal} handleCreate={handleCreate} logOut={LogOut} user={authData} /> : ""}
     </>
   );
 };

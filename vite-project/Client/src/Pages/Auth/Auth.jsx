@@ -1,9 +1,9 @@
 import React from "react";
 import "./Auth.css";
-
-
-const Auth = ({ user,logOut }) => {
-    
+import { UseContextAPi } from "../../Component/Context/Context";
+const Auth = ({ user, logOut,setEditCreateChannelBtn }) => {
+ const {userProfile}=UseContextAPi()
+ console.log("userProfile",userProfile)
   return (
     <>
       <div className="auth_container">
@@ -24,8 +24,13 @@ const Auth = ({ user,logOut }) => {
               {user}
             </div>
           </div>
-          <button className="Btns_AUth">Create your channel</button>
-          <button onClick={logOut} className="Btns_AUth">Logout</button>
+          {user?.result?.name?<>
+          <input type="submit" className="Btns_AUth" value={"Your Channel"}  onClick={()=>setEditCreateChannelBtn(true)}  />
+          </>: <input type="submit" className="Btns_AUth" value={"Create Your Channel"}  onClick={()=>setEditCreateChannelBtn(true)}  />}
+         
+          <button onClick={logOut} className="Btns_AUth">
+            Logout
+          </button>
         </div>
       </div>
     </>
