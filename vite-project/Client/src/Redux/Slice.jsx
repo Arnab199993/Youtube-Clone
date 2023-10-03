@@ -30,6 +30,38 @@ const Slice = createSlice({
       // return action.payload;
       state.data = action.payload;
     },
+    updateChannelData: () => {
+      createAsyncThunk("channels/updateData");
+      async ({ id, updateData }, thunkAPI) => {
+        try {
+          const { data } = await api.updateChannelData(id, updateData);
+          return data;
+        } catch (error) {
+          throw error;
+        }
+      };
+    },
+    addChannel: (channelData) => async (dispatch) => {
+      try {
+        const response = await fetch("/api/channels", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(channelData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          dispatch({ type: "channels/addChannel", payload: data });
+        } else {
+          // Handle error
+        }
+      } catch (error) {
+        // Handle error
+      }
+    },
   },
 });
 export default Slice.reducer;
@@ -39,12 +71,14 @@ export const {
   authReducers,
   setCurrentUser,
   CurrentUserReducer,
+  updateChannelData,
+  addChannel
 } = Slice.actions;
 export const loginUser = (authData) => async (dispatch) => {
   try {
     const { data } = await api.login(authData);
     dispatch(loginSuccess(data));
-    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))))
+    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))));
     // console.log("API_RES",  dispatch(loginSuccess(data)));
   } catch (error) {
     dispatch(loginFailure(error.message));

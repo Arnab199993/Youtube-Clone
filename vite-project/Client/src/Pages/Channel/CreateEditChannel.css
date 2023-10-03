@@ -55,12 +55,11 @@
     color: orange;
 }
 .container2_create_Edit_Channel h1{
-    /* text-decoration: underline; */
+    
     color:whitesmoke
 }
 .container2_create_Edit_Channel input,.container2_create_Edit_Channel textarea{
     color: aliceblue;
     padding: 0.5rem;
-    /* border: 2px solid rgb(137,243,250); */
     border: 2px solid white;
 }

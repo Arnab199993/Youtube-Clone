@@ -24,9 +24,9 @@ function App() {
   return (
     <>
       <div>
-        {editCreateChannelBtn && (
+        {/* {editCreateChannelBtn && ( */}
           <CreateEditChannel setEditCreateChannelBtn={setEditCreateChannelBtn} editCreateChannelBtn={editCreateChannelBtn} />
-        )}
+        {/* )} */}
 
         <Navbar setEditCreateChannelBtn={setEditCreateChannelBtn}  toggleBtn={toggleBtn} />
         <DrawSidebar
